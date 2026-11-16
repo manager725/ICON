@@ -6,6 +6,7 @@
 <title>Mary Pignatelli | Icon Media Agency: fashion production, talent management, runway and events, UK</title>
 <meta name="description" content="Icon Media Agency is Mary Pignatelli's fashion agency in the UK: fashion production, fashion and talent management, runway shows and events, and social media for fashion brands.">
 <meta name="theme-color" content="#F4F2F5">
+<meta name="color-scheme" content="only light">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mary Pignatelli | Icon Media Agency">
 <meta property="og:description" content="Fashion production, talent management, runway and events, and social media. Based in the UK.">
@@ -267,7 +268,7 @@ button { font: inherit; color: inherit; }
 .wk { min-width: 0; }
 .wk[hidden] { display: none; }
 .wk[data-orient="landscape"], .wk[data-size="lead"] { grid-column: 1 / -1; }
-@media (max-width: 1023px) {
+@media (max-width: 1023px), (max-aspect-ratio: 999/1000) {
   .wk[data-orient="portrait"] .wk-open { aspect-ratio: 4 / 5; }
   .wk[data-orient="portrait"] .wk-open picture, .wk[data-orient="portrait"] .wk-open img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
 }
@@ -278,7 +279,7 @@ button { font: inherit; color: inherit; }
 .wk figcaption { margin-top: 10px; }
 
 /* viewer */
-.viewer { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: var(--ink); color: var(--porcelain); }
+.viewer { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: var(--ink); color: var(--porcelain); }
 .viewer::backdrop { background: var(--ink); }
 .viewer[open] { display: grid; grid-template-rows: auto 1fr auto; }
 .v-top { display: flex; align-items: center; justify-content: space-between; height: var(--hh); padding: 0 var(--m); }
@@ -310,7 +311,7 @@ button { font: inherit; color: inherit; }
 .reel-cap { display: none; }
 .reel:not(.is-front) { cursor: pointer; }
 @media (min-width: 768px) { .reel { width: 40vw; } .ring { padding-inline: 30vw; } }
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (min-aspect-ratio: 1/1) {
   .reels { padding: 160px 0; }
   .reels.is-ring { padding: 0; }
   .reels-head { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: end; }
@@ -320,7 +321,7 @@ button { font: inherit; color: inherit; }
   .reels.is-ring .reels-head { width: 100%; margin-bottom: 0; padding-top: calc(var(--hh) + 28px); }
   .reels.is-ring .ring-stage { position: relative; min-height: 0; margin-top: 4vh; perspective: 1800px; perspective-origin: 50% 40%; }
   .reels.is-ring .ring { position: absolute; left: 50%; top: 0; height: 100%; width: auto; aspect-ratio: 9 / 16; translate: -50% 0; display: block; overflow: visible; padding: 0; scroll-snap-type: none; transform-style: preserve-3d; }
-  .reels.is-ring .reel { position: absolute; inset: 0; width: 100%; max-width: none; backface-visibility: hidden; }
+  .reels.is-ring .reel { position: absolute; inset: 0; width: 100%; max-width: none; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
   .reels.is-ring .reel-media { height: 100%; aspect-ratio: auto; }
   .reels.is-ring .reel:not(.is-front) .reel-media { opacity: .42; }
   .reels.is-ring .reel:not(.is-front):hover .reel-media { opacity: .62; }
@@ -446,7 +447,7 @@ button { font: inherit; color: inherit; }
   :root { --m: 32px; --gap: 24px; }
   .g { grid-template-columns: repeat(8, minmax(0, 1fr)); }
   .masthead { font-size: 34vw; }
-  .hero-frame { grid-column: 3 / -1; margin: calc(-.18 * 34vw) 0 0 0; }
+  .hero-frame { grid-column: 3 / -1; width: 100%; max-width: 560px; justify-self: end; margin: calc(-.18 * 34vw) 0 0 0; }
   .cover { grid-column: 1 / 7; }
   .about-photo { grid-column: 1 / 7; }
   .about-photo .clip { margin-inline: 0; }
@@ -466,7 +467,7 @@ button { font: inherit; color: inherit; }
 }
 
 /* 1024 */
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (min-aspect-ratio: 1/1) {
   :root { --m: 48px; --hh: 76px; }
   .g { grid-template-columns: repeat(12, minmax(0, 1fr)); }
   .nav { display: flex; align-items: center; gap: 28px; }
@@ -480,8 +481,8 @@ button { font: inherit; color: inherit; }
   .menu-btn { display: none; }
   .brand img { width: 38px; }
   .hero { min-height: 100vh; padding-top: calc(var(--hh) + 24px); padding-bottom: 48px; }
-  .masthead { font-size: min(35vw, 58vh); }
-  .hero-frame { grid-column: 6 / 10; margin: calc(-.3 * min(35vw, 58vh)) 0 0 0; }
+  .masthead { font-size: min(35vw, 58vh, 504px); }
+  .hero-frame { grid-column: 6 / 10; margin: calc(-.3 * min(35vw, 58vh, 504px)) 0 0 0; }
   .cover { grid-column: 1 / 5; grid-row: 2; align-self: end; margin: 0 0 30px; }
   .cover-lines { display: block; grid-column: 10 / -1; grid-row: 2; align-self: end; margin-bottom: 30px; }
   .cover-lines .cap { margin-bottom: 10px; }
@@ -536,7 +537,7 @@ button { font: inherit; color: inherit; }
   .actionbar { display: none; }
   html { scroll-padding-bottom: 0; }
   .ftr { padding: 96px 0 48px; }
-  .ftr-mark { grid-column: 1 / -1; font-size: min(35vw, 58vh); margin-top: 56px; }
+  .ftr-mark { grid-column: 1 / -1; font-size: min(35vw, 58vh, 504px); margin-top: 56px; }
   .ftr-in { grid-template-columns: auto 1fr auto; align-items: center; gap: 24px 48px; }
   .ftr nav { justify-content: center; }
   .ftr .cap { grid-column: 1 / -1; }
@@ -565,6 +566,25 @@ button { font: inherit; color: inherit; }
 /* split-text masks: room for round letter tops and descenders, with no change to the layout */
 .mline { padding-bottom: .2em; }
 .mline-mask { margin-bottom: -.2em; }
+
+/* short landscape screens (phones on their side): the masthead, hero film, reels and spread are sized by the
+   screen's height so each fits on one screen; the spread shows all three screens side by side */
+@media (orientation: landscape) and (max-height: 520px) {
+  .masthead, .ftr-mark { font-size: 50vh; }
+  .hero-frame { width: min(100%, calc(70vh * .8)); max-width: none; justify-self: end; margin: calc(-.16 * 50vh) 0 0 0; }
+  .reel { width: min(40vw, calc((100vh - 56px) * 9 / 16)); }
+  .ring { padding-inline: calc(50vw - min(20vw, (100vh - 56px) * 9 / 32)); }
+  .spread-frame.spread-frame--films { padding: 0 var(--m); gap: 12px; }
+  .spread-frame.spread-frame--films .sf { flex: none; width: min(calc((100% - 24px) / 3), calc((100vh - 56px) * 9 / 16)); }
+  .sf:not(.sf--lead) { display: block; }
+}
+
+/* browsers without overflow: clip (Safari before 16): hidden clips the same boxes */
+@supports not (overflow: clip) {
+  body { overflow-x: hidden; }
+  .spread, .ftr, .viewer[open], .work.is-horizontal .work-pin, .reels.is-ring .reels-pin { overflow: hidden; }
+}
+@supports not (overflow: clip) { @media (min-width: 1024px) and (min-aspect-ratio: 1/1) { .about { overflow: hidden; } } }
 
 /* reduced motion: nothing moves */
 @media (prefers-reduced-motion: reduce) {
@@ -623,10 +643,10 @@ button { font: inherit; color: inherit; }
     <h1 class="masthead" id="hero-title" data-masthead><span class="sr-only">Icon Media Agency, founded by Mary Pignatelli</span><span class="mast-word" aria-hidden="true" data-intro-word><span class="ml">I</span><span class="ml">C</span><span class="ml">O</span><span class="ml">N</span></span></h1>
     <figure class="hero-frame" data-hero-frame>
       <div class="hero-media" data-hero-media>
-        <picture><source type="image/avif" srcset="images/hero-poster-640.avif 640w, images/hero-poster-720.avif 720w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 70vw, 86vw"><source type="image/webp" srcset="images/hero-poster-640.webp 640w, images/hero-poster-720.webp 720w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 70vw, 86vw"><img src="images/hero-poster-720.jpg" srcset="images/hero-poster-640.jpg 640w, images/hero-poster-720.jpg 720w" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 70vw, 86vw" width="720" height="1280" alt="Mary Pignatelli walking through Piccadilly Circus, London, in a black leather trench coat" loading="eager" fetchpriority="high" decoding="async"></picture>
+        <picture><source type="image/avif" srcset="images/hero-poster-640.avif 640w, images/hero-poster-720.avif 720w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 30vw, (min-width: 768px) 70vw, 86vw"><source type="image/webp" srcset="images/hero-poster-640.webp 640w, images/hero-poster-720.webp 720w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 30vw, (min-width: 768px) 70vw, 86vw"><img src="images/hero-poster-720.jpg" srcset="images/hero-poster-640.jpg 640w, images/hero-poster-720.jpg 720w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 30vw, (min-width: 768px) 70vw, 86vw" width="720" height="1280" alt="Mary Pignatelli walking through Piccadilly Circus, London, in a black leather trench coat" loading="eager" fetchpriority="high" decoding="async"></picture>
         <video class="hero-video" muted loop playsinline preload="none" width="720" height="1280" aria-hidden="true" tabindex="-1" data-hero-video>
-          <source src="video/hero.webm" type="video/webm">
           <source src="video/hero.mp4" type="video/mp4">
+          <source src="video/hero.webm" type="video/webm">
         </video>
       </div>
       <figcaption class="cap hero-cap"><span>Piccadilly Circus, London</span><button class="text-btn hero-toggle" type="button" aria-label="Pause video" data-hero-toggle>Pause</button></figcaption>
@@ -676,7 +696,7 @@ button { font: inherit; color: inherit; }
     <h2 class="h2 about-title" id="about-title">Mary <em>Pignatelli</em></h2>
     <figure class="about-photo">
       <div class="clip" data-reveal="clip">
-        <picture><source type="image/avif" srcset="images/about-640.avif 640w, images/about-1080.avif 1080w, images/about-1288.avif 1288w" sizes="(min-width: 1024px) 38vw, (min-width: 768px) 70vw, 86vw"><source type="image/webp" srcset="images/about-640.webp 640w, images/about-1080.webp 1080w, images/about-1288.webp 1288w" sizes="(min-width: 1024px) 38vw, (min-width: 768px) 70vw, 86vw"><img src="images/about-1080.jpg" srcset="images/about-640.jpg 640w, images/about-1080.jpg 1080w, images/about-1288.jpg 1288w" sizes="(min-width: 1024px) 38vw, (min-width: 768px) 70vw, 86vw" width="1288" height="1717" alt="Mary Pignatelli in a chocolate-brown draped dress and sunglasses in Cannes" loading="lazy" decoding="async"></picture>
+        <picture><source type="image/avif" srcset="images/about-640.avif 640w, images/about-1080.avif 1080w, images/about-1288.avif 1288w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 38vw, (min-width: 768px) 70vw, 86vw"><source type="image/webp" srcset="images/about-640.webp 640w, images/about-1080.webp 1080w, images/about-1288.webp 1288w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 38vw, (min-width: 768px) 70vw, 86vw"><img src="images/about-1080.jpg" srcset="images/about-640.jpg 640w, images/about-1080.jpg 1080w, images/about-1288.jpg 1288w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 38vw, (min-width: 768px) 70vw, 86vw" width="1288" height="1717" alt="Mary Pignatelli in a chocolate-brown draped dress and sunglasses in Cannes" loading="lazy" decoding="async"></picture>
       </div>
       <figcaption class="cap">Cannes, 2026</figcaption>
     </figure>
@@ -699,7 +719,7 @@ button { font: inherit; color: inherit; }
   <div class="spread-dim" aria-hidden="true" data-spread-dim></div>
   <div class="spread-pin" data-spread-pin>
     <figure class="spread-fig">
-      <div class="spread-frame spread-frame--films" data-spread-frame><div class="sf"><video muted loop playsinline preload="none" width="720" height="1280" data-poster="images/reel-fur-640.webp" aria-label="Mary Pignatelli in a brown leather jacket holding a sculptural feather piece" data-spread-video><source data-src="video/reel-fur.mp4" type="video/mp4"><source data-src="video/reel-fur.webm" type="video/webm"></video></div><div class="sf sf--lead"><video muted loop playsinline preload="none" width="540" height="960" data-poster="images/reel-eidiko-540.webp" aria-label="Mary Pignatelli getting dressed in a gold satin puffer jacket with Eidiko Concept Store" data-spread-video><source src="video/reel-eidiko.mp4" type="video/mp4"><source src="video/reel-eidiko.webm" type="video/webm"></video></div><div class="sf"><video muted loop playsinline preload="none" width="720" height="1280" data-poster="images/reel-crosswalk-640.webp" aria-label="Mary Pignatelli lying on a pedestrian crossing in black leather" data-spread-video><source data-src="video/reel-crosswalk.mp4" type="video/mp4"><source data-src="video/reel-crosswalk.webm" type="video/webm"></video></div></div>
+      <div class="spread-frame spread-frame--films" data-spread-frame><div class="sf"><video muted loop playsinline preload="none" width="720" height="1280" data-poster="images/reel-fur-640.webp" aria-label="Mary Pignatelli in a brown leather jacket holding a sculptural feather piece" data-sources="video/reel-fur.mp4 video/reel-fur.webm" data-spread-video></video></div><div class="sf sf--lead"><video muted loop playsinline preload="none" width="540" height="960" data-poster="images/reel-eidiko-540.webp" aria-label="Mary Pignatelli getting dressed in a gold satin puffer jacket with Eidiko Concept Store" data-spread-video><source src="video/reel-eidiko.mp4" type="video/mp4"><source src="video/reel-eidiko.webm" type="video/webm"></video></div><div class="sf"><video muted loop playsinline preload="none" width="720" height="1280" data-poster="images/reel-crosswalk-640.webp" aria-label="Mary Pignatelli lying on a pedestrian crossing in black leather" data-sources="video/reel-crosswalk.mp4 video/reel-crosswalk.webm" data-spread-video></video></div></div>
       <figcaption class="spread-cap"><span class="cap">From Mary's reels: leather and feathers, getting dressed with Eidiko Concept Store, and black leather on the crossing.</span><span class="spread-tools"><button class="text-btn" type="button" data-spread-toggle>Pause films</button><a class="tlink" href="#reels">More reels<svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></span></figcaption>
     </figure>
   </div>
@@ -800,21 +820,21 @@ button { font: inherit; color: inherit; }
       </div>
     </div>
     <div class="work-track" data-work-track>
-      <figure class="wk" data-work-item data-cat="runway" data-orient="landscape"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/hobeika-runway-wide-640.avif 640w, images/hobeika-runway-wide-1080.avif 1080w, images/hobeika-runway-wide-1217.avif 1217w" sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw"><source type="image/webp" srcset="images/hobeika-runway-wide-640.webp 640w, images/hobeika-runway-wide-1080.webp 1080w, images/hobeika-runway-wide-1217.webp 1217w" sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw"><img src="images/hobeika-runway-wide-1080.jpg" srcset="images/hobeika-runway-wide-640.jpg 640w, images/hobeika-runway-wide-1080.jpg 1080w, images/hobeika-runway-wide-1217.jpg 1217w" sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw" width="1217" height="811" alt="Models on the Georges Hobeika couture runway under blue-lit arches" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Georges Hobeika couture show, Haute Couture Week, Paris, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/soft-armour-640.avif 640w, images/soft-armour-960.avif 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/soft-armour-640.webp 640w, images/soft-armour-960.webp 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/soft-armour-960.jpg" srcset="images/soft-armour-640.jpg 640w, images/soft-armour-960.jpg 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="960" height="1280" alt="Model in a dark leather jacket holding a green stem against a peach backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Soft Armour, Capture One editorial, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/couture-arrival-640.avif 640w, images/couture-arrival-1080.avif 1080w, images/couture-arrival-1216.avif 1216w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/couture-arrival-640.webp 640w, images/couture-arrival-1080.webp 1080w, images/couture-arrival-1216.webp 1216w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/couture-arrival-1080.jpg" srcset="images/couture-arrival-640.jpg 640w, images/couture-arrival-1080.jpg 1080w, images/couture-arrival-1216.jpg 1216w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="1216" height="2160" alt="Mary Pignatelli arriving at a couture show in a sculptural ivory dress and black sunglasses" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Arriving at Georges Hobeika, Haute Couture Week, Paris, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait" data-size="lead"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/capture-one-640.avif 640w, images/capture-one-960.avif 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/capture-one-640.webp 640w, images/capture-one-960.webp 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/capture-one-960.jpg" srcset="images/capture-one-640.jpg 640w, images/capture-one-960.jpg 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="960" height="1200" alt="Close-up of a red-haired model with eyes closed on a warm backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Editorial story for Capture One, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/kassi-640.avif 640w, images/kassi-672.avif 672w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/kassi-640.webp 640w, images/kassi-672.webp 672w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/kassi-672.jpg" srcset="images/kassi-640.jpg 640w, images/kassi-672.jpg 672w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="672" height="840" alt="Model in a black leather trench and knee boots posed with a chrome chair" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Fashion editorial with Kassi Rrita, Sumaq Management, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="events" data-orient="landscape"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/brongniart-wide-640.avif 640w, images/brongniart-wide-1080.avif 1080w, images/brongniart-wide-1600.avif 1600w" sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw"><source type="image/webp" srcset="images/brongniart-wide-640.webp 640w, images/brongniart-wide-1080.webp 1080w, images/brongniart-wide-1600.webp 1600w" sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw"><img src="images/brongniart-wide-1080.jpg" srcset="images/brongniart-wide-640.jpg 640w, images/brongniart-wide-1080.jpg 1080w, images/brongniart-wide-1600.jpg 1600w" sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw" width="1600" height="1067" alt="Mary Pignatelli in a sculptural ivory dress and black sunglasses outside the Palais Brongniart" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Palais Brongniart, Paris, 2026. Dress by Aleksandra Jendryka.</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/capture-one-bw-640.avif 640w, images/capture-one-bw-1080.avif 1080w, images/capture-one-bw-1152.avif 1152w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/capture-one-bw-640.webp 640w, images/capture-one-bw-1080.webp 1080w, images/capture-one-bw-1152.webp 1152w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/capture-one-bw-1080.jpg" srcset="images/capture-one-bw-640.jpg 640w, images/capture-one-bw-1080.jpg 1080w, images/capture-one-bw-1152.jpg 1152w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="1152" height="2048" alt="Black and white portrait of a model in a dark coat with hands clasped" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Built for teams, Capture One, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/cannes-640.avif 640w, images/cannes-1080.avif 1080w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/cannes-640.webp 640w, images/cannes-1080.webp 1080w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/cannes-1080.jpg" srcset="images/cannes-640.jpg 640w, images/cannes-1080.jpg 1080w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="1080" height="1440" alt="Mary Pignatelli in a zebra-print jacket and dark sunglasses" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Cannes, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait" data-size="lead"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/sage-640.avif 640w, images/sage-1024.avif 1024w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/sage-640.webp 640w, images/sage-1024.webp 1024w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/sage-1024.jpg" srcset="images/sage-640.jpg 640w, images/sage-1024.jpg 1024w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="1024" height="1280" alt="Portrait of a model with a bob haircut against a sage-green backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Portrait editorial with Kassi Rrita, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/zdf-640.avif 640w, images/zdf-1080.avif 1080w, images/zdf-1116.avif 1116w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/zdf-640.webp 640w, images/zdf-1080.webp 1080w, images/zdf-1116.webp 1116w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/zdf-1080.jpg" srcset="images/zdf-640.jpg 640w, images/zdf-1080.jpg 1080w, images/zdf-1116.jpg 1116w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="1116" height="1980" alt="Mary Pignatelli in a black leather jacket and sunglasses at night" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Interview with ZDF, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="events" data-orient="landscape"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/opera-garnier-wide-640.avif 640w, images/opera-garnier-wide-1080.avif 1080w, images/opera-garnier-wide-1600.avif 1600w" sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw"><source type="image/webp" srcset="images/opera-garnier-wide-640.webp 640w, images/opera-garnier-wide-1080.webp 1080w, images/opera-garnier-wide-1600.webp 1600w" sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw"><img src="images/opera-garnier-wide-1080.jpg" srcset="images/opera-garnier-wide-640.jpg 640w, images/opera-garnier-wide-1080.jpg 1080w, images/opera-garnier-wide-1600.jpg 1600w" sizes="(min-width: 1024px) 60vw, (min-width: 768px) 64vw, 100vw" width="1600" height="1067" alt="Mary Pignatelli in a deep red dress with an embellished collar outside the Opéra Garnier" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Opéra Garnier, Paris, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/studio-640.avif 640w, images/studio-720.avif 720w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/studio-640.webp 640w, images/studio-720.webp 720w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/studio-720.jpg" srcset="images/studio-640.jpg 640w, images/studio-720.jpg 720w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="720" height="1280" alt="Model in an orange coat seated on a chair over a turquoise studio backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Studio session, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/kooples-640.avif 640w, images/kooples-960.avif 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/kooples-640.webp 640w, images/kooples-960.webp 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/kooples-960.jpg" srcset="images/kooples-640.jpg 640w, images/kooples-960.jpg 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="960" height="1280" alt="Mary Pignatelli in a brown leather jacket carrying black The Kooples shopping bags" loading="lazy" decoding="async"></picture></button><figcaption class="cap">The Kooples, Cannes, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/soft-armour-b-640.avif 640w, images/soft-armour-b-960.avif 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/soft-armour-b-640.webp 640w, images/soft-armour-b-960.webp 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/soft-armour-b-960.jpg" srcset="images/soft-armour-b-640.jpg 640w, images/soft-armour-b-960.jpg 960w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="960" height="1200" alt="Model crouching in a dark suit with a yellow flower stem against a peach backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Soft Armour, Capture One Multi-User Sessions, 2026</figcaption></figure>
-      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/iren-nikard-640.avif 640w, images/iren-nikard-1066.avif 1066w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/iren-nikard-640.webp 640w, images/iren-nikard-1066.webp 1066w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/iren-nikard-1066.jpg" srcset="images/iren-nikard-640.jpg 640w, images/iren-nikard-1066.jpg 1066w" sizes="(min-width: 1024px) 34vw, (min-width: 768px) 32vw, 50vw" width="1066" height="1421" alt="Event poster reading 14.11 London, special event by Iren Nikard, over a tower of champagne glasses" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Special event by Iren Nikard, London, 14 November 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="runway" data-orient="landscape"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/hobeika-runway-wide-640.avif 640w, images/hobeika-runway-wide-1080.avif 1080w, images/hobeika-runway-wide-1217.avif 1217w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 60vw, (min-width: 768px) 64vw, 100vw"><source type="image/webp" srcset="images/hobeika-runway-wide-640.webp 640w, images/hobeika-runway-wide-1080.webp 1080w, images/hobeika-runway-wide-1217.webp 1217w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 60vw, (min-width: 768px) 64vw, 100vw"><img src="images/hobeika-runway-wide-1080.jpg" srcset="images/hobeika-runway-wide-640.jpg 640w, images/hobeika-runway-wide-1080.jpg 1080w, images/hobeika-runway-wide-1217.jpg 1217w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 60vw, (min-width: 768px) 64vw, 100vw" width="1217" height="811" alt="Models on the Georges Hobeika couture runway under blue-lit arches" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Georges Hobeika couture show, Haute Couture Week, Paris, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/soft-armour-640.avif 640w, images/soft-armour-960.avif 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/soft-armour-640.webp 640w, images/soft-armour-960.webp 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/soft-armour-960.jpg" srcset="images/soft-armour-640.jpg 640w, images/soft-armour-960.jpg 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="960" height="1280" alt="Model in a dark leather jacket holding a green stem against a peach backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Soft Armour, Capture One editorial, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/couture-arrival-640.avif 640w, images/couture-arrival-1080.avif 1080w, images/couture-arrival-1216.avif 1216w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/couture-arrival-640.webp 640w, images/couture-arrival-1080.webp 1080w, images/couture-arrival-1216.webp 1216w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/couture-arrival-1080.jpg" srcset="images/couture-arrival-640.jpg 640w, images/couture-arrival-1080.jpg 1080w, images/couture-arrival-1216.jpg 1216w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="1216" height="2160" alt="Mary Pignatelli arriving at a couture show in a sculptural ivory dress and black sunglasses" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Arriving at Georges Hobeika, Haute Couture Week, Paris, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait" data-size="lead"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/capture-one-640.avif 640w, images/capture-one-960.avif 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/capture-one-640.webp 640w, images/capture-one-960.webp 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/capture-one-960.jpg" srcset="images/capture-one-640.jpg 640w, images/capture-one-960.jpg 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="960" height="1200" alt="Close-up of a red-haired model with eyes closed on a warm backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Editorial story for Capture One, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/kassi-640.avif 640w, images/kassi-672.avif 672w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/kassi-640.webp 640w, images/kassi-672.webp 672w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/kassi-672.jpg" srcset="images/kassi-640.jpg 640w, images/kassi-672.jpg 672w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="672" height="840" alt="Model in a black leather trench and knee boots posed with a chrome chair" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Fashion editorial with Kassi Rrita, Sumaq Management, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="events" data-orient="landscape"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/brongniart-wide-640.avif 640w, images/brongniart-wide-1080.avif 1080w, images/brongniart-wide-1600.avif 1600w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 60vw, (min-width: 768px) 64vw, 100vw"><source type="image/webp" srcset="images/brongniart-wide-640.webp 640w, images/brongniart-wide-1080.webp 1080w, images/brongniart-wide-1600.webp 1600w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 60vw, (min-width: 768px) 64vw, 100vw"><img src="images/brongniart-wide-1080.jpg" srcset="images/brongniart-wide-640.jpg 640w, images/brongniart-wide-1080.jpg 1080w, images/brongniart-wide-1600.jpg 1600w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 60vw, (min-width: 768px) 64vw, 100vw" width="1600" height="1067" alt="Mary Pignatelli in a sculptural ivory dress and black sunglasses outside the Palais Brongniart" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Palais Brongniart, Paris, 2026. Dress by Aleksandra Jendryka.</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/capture-one-bw-640.avif 640w, images/capture-one-bw-1080.avif 1080w, images/capture-one-bw-1152.avif 1152w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/capture-one-bw-640.webp 640w, images/capture-one-bw-1080.webp 1080w, images/capture-one-bw-1152.webp 1152w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/capture-one-bw-1080.jpg" srcset="images/capture-one-bw-640.jpg 640w, images/capture-one-bw-1080.jpg 1080w, images/capture-one-bw-1152.jpg 1152w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="1152" height="2048" alt="Black and white portrait of a model in a dark coat with hands clasped" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Built for teams, Capture One, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/cannes-640.avif 640w, images/cannes-1080.avif 1080w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/cannes-640.webp 640w, images/cannes-1080.webp 1080w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/cannes-1080.jpg" srcset="images/cannes-640.jpg 640w, images/cannes-1080.jpg 1080w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="1080" height="1440" alt="Mary Pignatelli in a zebra-print jacket and dark sunglasses" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Cannes, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait" data-size="lead"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/sage-640.avif 640w, images/sage-1024.avif 1024w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/sage-640.webp 640w, images/sage-1024.webp 1024w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/sage-1024.jpg" srcset="images/sage-640.jpg 640w, images/sage-1024.jpg 1024w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="1024" height="1280" alt="Portrait of a model with a bob haircut against a sage-green backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Portrait editorial with Kassi Rrita, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/zdf-640.avif 640w, images/zdf-1080.avif 1080w, images/zdf-1116.avif 1116w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/zdf-640.webp 640w, images/zdf-1080.webp 1080w, images/zdf-1116.webp 1116w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/zdf-1080.jpg" srcset="images/zdf-640.jpg 640w, images/zdf-1080.jpg 1080w, images/zdf-1116.jpg 1116w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="1116" height="1980" alt="Mary Pignatelli in a black leather jacket and sunglasses at night" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Interview with ZDF, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="events" data-orient="landscape"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/opera-garnier-wide-640.avif 640w, images/opera-garnier-wide-1080.avif 1080w, images/opera-garnier-wide-1600.avif 1600w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 60vw, (min-width: 768px) 64vw, 100vw"><source type="image/webp" srcset="images/opera-garnier-wide-640.webp 640w, images/opera-garnier-wide-1080.webp 1080w, images/opera-garnier-wide-1600.webp 1600w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 60vw, (min-width: 768px) 64vw, 100vw"><img src="images/opera-garnier-wide-1080.jpg" srcset="images/opera-garnier-wide-640.jpg 640w, images/opera-garnier-wide-1080.jpg 1080w, images/opera-garnier-wide-1600.jpg 1600w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 60vw, (min-width: 768px) 64vw, 100vw" width="1600" height="1067" alt="Mary Pignatelli in a deep red dress with an embellished collar outside the Opéra Garnier" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Opéra Garnier, Paris, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/studio-640.avif 640w, images/studio-720.avif 720w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/studio-640.webp 640w, images/studio-720.webp 720w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/studio-720.jpg" srcset="images/studio-640.jpg 640w, images/studio-720.jpg 720w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="720" height="1280" alt="Model in an orange coat seated on a chair over a turquoise studio backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Studio session, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/kooples-640.avif 640w, images/kooples-960.avif 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/kooples-640.webp 640w, images/kooples-960.webp 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/kooples-960.jpg" srcset="images/kooples-640.jpg 640w, images/kooples-960.jpg 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="960" height="1280" alt="Mary Pignatelli in a brown leather jacket carrying black The Kooples shopping bags" loading="lazy" decoding="async"></picture></button><figcaption class="cap">The Kooples, Cannes, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="shoots" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/soft-armour-b-640.avif 640w, images/soft-armour-b-960.avif 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/soft-armour-b-640.webp 640w, images/soft-armour-b-960.webp 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/soft-armour-b-960.jpg" srcset="images/soft-armour-b-640.jpg 640w, images/soft-armour-b-960.jpg 960w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="960" height="1200" alt="Model crouching in a dark suit with a yellow flower stem against a peach backdrop" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Soft Armour, Capture One Multi-User Sessions, 2026</figcaption></figure>
+      <figure class="wk" data-work-item data-cat="events" data-orient="portrait"><button class="wk-open" type="button"><picture><source type="image/avif" srcset="images/iren-nikard-640.avif 640w, images/iren-nikard-1066.avif 1066w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><source type="image/webp" srcset="images/iren-nikard-640.webp 640w, images/iren-nikard-1066.webp 1066w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw"><img src="images/iren-nikard-1066.jpg" srcset="images/iren-nikard-640.jpg 640w, images/iren-nikard-1066.jpg 1066w" sizes="(min-width: 1024px) and (min-aspect-ratio: 1/1) 34vw, (min-width: 768px) 32vw, 50vw" width="1066" height="1421" alt="Event poster reading 14.11 London, special event by Iren Nikard, over a tower of champagne glasses" loading="lazy" decoding="async"></picture></button><figcaption class="cap">Special event by Iren Nikard, London, 14 November 2026</figcaption></figure>
     </div>
   </div>
 </section>
@@ -1108,7 +1128,14 @@ button { font: inherit; color: inherit; }
   var heroMedia = $('[data-hero-media]');
   var heroToggle = $('[data-hero-toggle]');
   var heroPaused = false, heroInView = true, heroStarted = false;
-  var playSafe = function (v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+  /* every film is started and stopped through these two, so the page knows which films it wants playing */
+  var playSafe = function (v) { v.__want = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+  var pauseSafe = function (v) { v.__want = false; if (!v.paused) v.pause(); };
+  /* a looping film that the browser stops at its loop point (some WebKit builds do) starts again */
+  document.addEventListener('pause', function (e) {
+    var v = e.target;
+    if (v && v.__want && v.loop && v.currentTime < 0.5 && !document.hidden) playSafe(v);
+  }, true);
   if (video && !reduce) {
     video.addEventListener('playing', function () { heroMedia.classList.add('is-playing'); });
     var FILM = ['scroll', 'pointermove', 'touchstart', 'keydown'];
@@ -1120,22 +1147,28 @@ button { font: inherit; color: inherit; }
       video.load();
       if (!heroPaused && heroInView) playSafe(video);
     };
-    window.addEventListener('load', function () {
+    var filmArmed = false;
+    var armFilm = function () {
+      if (filmArmed) return;
+      filmArmed = true;
       FILM.forEach(function (t) { window.addEventListener(t, startFilm, { passive: true }); });
       setTimeout(startFilm, 5000);
-    });
+    };
+    /* armed at the load event, or 4s after the script runs if a slow resource holds that event */
+    if (document.readyState === 'complete') armFilm(); else window.addEventListener('load', armFilm, { once: true });
+    setTimeout(armFilm, 4000);
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) {
         heroInView = es[0].isIntersecting;
         if (!heroStarted) return;
-        if (heroInView && !heroPaused) playSafe(video); else video.pause();
+        if (heroInView && !heroPaused) playSafe(video); else pauseSafe(video);
       }).observe(heroMedia);
     }
     heroToggle.addEventListener('click', function () {
       heroPaused = !heroPaused;
       heroToggle.textContent = heroPaused ? 'Play' : 'Pause';
       heroToggle.setAttribute('aria-label', heroPaused ? 'Play video' : 'Pause video');
-      if (heroPaused) video.pause(); else if (heroInView && heroStarted) playSafe(video);
+      if (heroPaused) pauseSafe(video); else if (heroInView && heroStarted) playSafe(video);
     });
   }
 
@@ -1153,12 +1186,20 @@ button { font: inherit; color: inherit; }
       sFilms.forEach(function (v) {
         if (!sPaused && sInView && shown(v)) {
           if (v.preload !== 'auto') {
-            /* the side screens carry their sources only once shown, so phones never touch them */
-            $$('source[data-src]', v).forEach(function (src) { src.src = src.getAttribute('data-src'); src.removeAttribute('data-src'); });
+            /* the side screens get their sources only once shown, so phones never touch them */
+            if (v.dataset.sources) {
+              v.dataset.sources.split(' ').forEach(function (url) {
+                var src = document.createElement('source');
+                src.src = url;
+                src.type = /\.webm$/.test(url) ? 'video/webm' : 'video/mp4';
+                v.appendChild(src);
+              });
+              v.removeAttribute('data-sources');
+            }
             v.preload = 'auto'; v.load();
           }
           playSafe(v);
-        } else if (!v.paused) v.pause();
+        } else pauseSafe(v);
       });
     };
     sToggle.addEventListener('click', function () { sPaused = !sPaused; setSToggle(); syncS(); });
@@ -1183,7 +1224,7 @@ button { font: inherit; color: inherit; }
   function syncReels() {
     reelVideos.forEach(function (v, i) {
       if (!reelsPaused && reelsInView && i === activeReel) { v.preload = 'auto'; playSafe(v); }
-      else if (!v.paused) v.pause();
+      else pauseSafe(v);
     });
     reelEls.forEach(function (r, i) { r.classList.toggle('is-front', i === activeReel); });
     var r = reelEls[activeReel];
@@ -1253,7 +1294,7 @@ button { font: inherit; color: inherit; }
     });
     brandList.addEventListener('pointerleave', function () { brandHover = null; if (brandNear) setBrand(brandNear); });
     window.addEventListener('scroll', function () {
-      if (brandTick || !window.matchMedia('(min-width: 1024px)').matches) return;
+      if (brandTick || !window.matchMedia('(min-width: 1024px) and (min-aspect-ratio: 1/1)').matches) return;
       brandTick = true;
       requestAnimationFrame(nearestBrand);
     }, { passive: true });
@@ -1263,7 +1304,7 @@ button { font: inherit; color: inherit; }
   if ('IntersectionObserver' in window) {
     var slotIO = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
-        if (!e.isIntersecting || !window.matchMedia('(min-width: 1024px)').matches) return;
+        if (!e.isIntersecting || !window.matchMedia('(min-width: 1024px) and (min-aspect-ratio: 1/1)').matches) return;
         $$('img', e.target).forEach(function (img) { img.loading = 'eager'; });
         slotIO.unobserve(e.target);
       });
@@ -1409,7 +1450,7 @@ button { font: inherit; color: inherit; }
     vImg.setAttribute('height', img.getAttribute('height'));
     vImg.src = img.currentSrc || img.src;
     if (webp) {
-      vImg.sizes = it.getAttribute('data-orient') === 'landscape' ? '(min-width: 1024px) 90vw, 100vw' : '(min-width: 1024px) 50vh, 100vw';
+      vImg.sizes = it.getAttribute('data-orient') === 'landscape' ? '(min-width: 1024px) and (min-aspect-ratio: 1/1) 90vw, 100vw' : '(min-width: 1024px) and (min-aspect-ratio: 1/1) 50vh, 100vw';
       vImg.srcset = webp.srcset;
     }
     vImg.alt = img.alt;
@@ -1492,8 +1533,10 @@ button { font: inherit; color: inherit; }
     start();
   };
   EVENTS.forEach(function (t) { window.addEventListener(t, go, { passive: true }); });
-  var onLoad = function () { timer = setTimeout(go, 4000); };
+  var armed = false;
+  var onLoad = function () { if (armed) return; armed = true; timer = setTimeout(go, 4000); };
   if (document.readyState === 'complete') onLoad(); else window.addEventListener('load', onLoad, { once: true });
+  setTimeout(onLoad, 4000);
 })();
 </script>
 <script>
@@ -1520,7 +1563,7 @@ window.__iconMotionInit = () => {
   const delay = ms => new Promise(r => setTimeout(r, ms));
   const STAGGER = 0.06;
   const MOTION = '(prefers-reduced-motion: no-preference)';
-  const DESKTOP = '(min-width: 1024px) and (prefers-reduced-motion: no-preference)';
+  const DESKTOP = '(min-width: 1024px) and (min-aspect-ratio: 1/1) and (prefers-reduced-motion: no-preference)';
 
   let lenis = null;
   let gallery = null;
@@ -1644,7 +1687,7 @@ window.__iconMotionInit = () => {
     if (hero && letters.length === 4) {
       const masthead = $('[data-masthead]');
       gsap.to(letters, {
-        x: i => [-1, -0.35, 0.35, 1][i] * masthead.offsetWidth * 0.045,
+        x: i => [-1, -0.35, 0.35, 1][i] * Math.max(0, Math.min(masthead.offsetWidth * 0.045, (parseFloat(getComputedStyle(root).getPropertyValue('--m')) || 20) - 8)),
         ease: 'none',
         scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true, invalidateOnRefresh: true }
       });
@@ -1764,7 +1807,7 @@ window.__iconMotionInit = () => {
         const line = cut && $('[data-cut-title]', cut);
         const jump = () => {
           if (lenis) { lenis.start(); lenis.scrollTo(target, { offset: 0, immediate: true, force: true }); }
-          else target.scrollIntoView({ behavior: 'instant', block: 'start' });
+          else target.scrollIntoView({ behavior: 'auto', block: 'start' });
           ScrollTrigger.update();
         };
         /* the top of the page and the skip link scroll as before */
@@ -1992,7 +2035,7 @@ window.__iconMotionInit = () => {
   });
 
   /* phones and tablets: work images wipe in; the reels row turns like a coverflow as it is swiped */
-  mm.add('(max-width: 1023px) and (prefers-reduced-motion: no-preference)', () => {
+  mm.add('(max-width: 1023px) and (prefers-reduced-motion: no-preference), (max-aspect-ratio: 999/1000) and (prefers-reduced-motion: no-preference)', () => {
     /* work images wipe up into place as they arrive, the photo settling from 1.15 to 1 */
     const tiles = $$('[data-work-item] .wk-open');
     if (tiles.length) {
